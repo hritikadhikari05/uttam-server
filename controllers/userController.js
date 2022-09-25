@@ -142,7 +142,7 @@ exports.postSolution = async (req, res) => {
     const { postId, description } = req.body;
     // const {postId} = req.params;
     const userId = req.user;
-    console.log(userId);
+    // console.log(userId);
 
     // create new entry for solution in posts
     const solution = await Solution({
@@ -169,7 +169,7 @@ exports.postSolution = async (req, res) => {
         })
         .catch((err) => {
             res.status(401).send({ message: "Error posting solution" });
-            console.log(err)
+            // console.log(err)
         })
 }
 
@@ -213,7 +213,7 @@ exports.postComment = async (req, res) => {
         })
         .catch((err) => {
             res.status(401).send({ message: "Error posting comment" });
-            console.log(err)
+            // console.log(err)
         })
 }
 
@@ -248,7 +248,7 @@ exports.upVote = async (req, res) => {
             })
             .catch((err) => {
                 res.status(401).send({ message: "Error upvoting post" })
-                // console.log(err)
+                // console.log(err)9
             })
 
     }
@@ -337,7 +337,7 @@ exports.getAllPosts = async (req, res) => {
 
 
 exports.getSingleUser = async (req, res) => {
-    console.log(req.user)
+    // console.log(req.user)
     const user = await User.findOne();
     res.status(200).send({ data: user });
 }
