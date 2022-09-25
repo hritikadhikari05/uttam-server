@@ -18,7 +18,7 @@ const mongoose = require("mongoose");
 exports.getUser = async (req, res) => {
     const { userId } = req.params;
     try {
-        let user = await userModel.findById(userId);
+        let user = await User.findById(userId);
         // making sure that the password is not sent to the client
         user.password = undefined;
         res.send({ status: res.statusCode, body: user })
