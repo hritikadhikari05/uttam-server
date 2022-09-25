@@ -49,7 +49,8 @@ exports.createPost = async (req, res) => {
         if (req.user) {
 
             const post = await Post({ title, description, images: images, userId: req.user, upVotes: 0, userName: user.userName, downVotes: 0, status: "pending", tags: tags, categories: categories });
-            post.save().then((result) => {
+            post.save().then(async (result) => {
+                await User.findByIdAndUpdate(req.user, { $push: { posts: result._id } })
                 res.send({ data: result })
             }).catch((err) => {
                 // console.log(err)
