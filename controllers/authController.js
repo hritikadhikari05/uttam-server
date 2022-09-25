@@ -82,8 +82,8 @@ exports.askResetPassword = async (req, res) => {
                 await user.save();
 
                 // generate reset link
-                const link = `http://127.0.0.1:3100/auth/reset-password/${token}`;
-                // const link = `http://${process.env.URL}/auth/reset-password/${token}`;
+                // const link = `http://127.0.0.1:3100/auth/reset-password/${token}`;
+                const link = `http://${process.env.URL}/auth/reset-password/${token}`;
 
                 // send email
                 sendMail(email, "Reset Password", `Click on the link to reset your password: ${link}`);
