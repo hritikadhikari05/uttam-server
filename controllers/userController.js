@@ -248,7 +248,7 @@ exports.upVote = async (req, res) => {
             })
             .catch((err) => {
                 res.status(401).send({ message: "Error upvoting post" })
-                console.log(err)
+                // console.log(err)
             })
 
     }
