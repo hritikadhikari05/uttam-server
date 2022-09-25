@@ -329,7 +329,7 @@ exports.upVoteSolution = async (req, res) => {
 
 
 exports.getAllPosts = async (req, res) => {
-    const posts = await Post.find().sort({ updatedAt: 1 });
+    const posts = await Post.find().sort({ updatedAt: -1 });
 
     res.send({ status: res.send.statusCode, data: posts });
 }
