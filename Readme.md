@@ -42,3 +42,13 @@ npm start
 - /user/:id
 - /user/unredeemed-points
 - /dashboard/get-dashboard-details
+
+
+
+NOTE: 
+
+    - To access moderator:
+        - First signup using the email and password
+        - Change the url to /admin 
+            -For eg:- https://solovo-hackathon.netlify.app/admin
+        - Then moderator dashboard will be displayed and form here request can be approved and rejected.
